@@ -1,0 +1,12 @@
+0.- Crear o Conectar con Git Hub
+1.- Crear base de datos
+    1.2 Crear dos usuarios ya hechos
+2.- Conectar la base de datos a PHP
+3.- Renderizar la base de datos en HTML
+4.- Crear un Log in en HTML
+!! Autentificar para que solo vean la vista profile !!
+5.- Crear una vista de profile en HTML
+6.- Crear el HTML para editar informacion del perfile
+7.- Las contraseñas de cada cuenta deben estar hasheadas o encriptadas con password_hash().
+8.- En estilos crear un dark mod modo oscuro
+9.- Revisar los errores de la mejor manera posible
