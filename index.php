@@ -1,11 +1,4 @@
 <?php 
-echo "PRUEBA";
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
