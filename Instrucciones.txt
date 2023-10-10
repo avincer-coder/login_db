@@ -9,4 +9,8 @@
 6.- Crear el HTML para editar informacion del perfile
 7.- Las contraseñas de cada cuenta deben estar hasheadas o encriptadas con password_hash().
 8.- En estilos crear un dark mod modo oscuro
+
 9.- Revisar los errores de la mejor manera posible
+    9.1 Evitar que se cree un perfile con una contraseña vacia o correo vacio
+    9.2 Mandar un mensaje que diga "Falta contraseña/correo"
+    9.3 Mandar mensaje de que el correo ya exsiste o esta en uso si se crea un perfile con el mismo correo

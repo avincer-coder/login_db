@@ -9,4 +9,13 @@ foreach ($result as $cada_result){
         echo "Bienvenido has entrado al login";
     }
 }
+
+
+// hash("md5", )
+
+
+
 ?>
+
+
+
