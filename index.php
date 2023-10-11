@@ -1,5 +1,6 @@
 <?php 
 
+// INSERT INTO `usuarios`(`Email`, `Contraseña`, `Photo`, `Name`, `Biografia`, `Phone`) VALUES ('Mauricio@mauricio','098765','mauricio.jpg','Mauricio','Lorem12','1234567890');
 
 session_start(); 
 if (isset($_SESSION["logueado"])) {
@@ -12,7 +13,8 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
     require_once "db.php";
     $sql = "SELECT * FROM `usuarios` WHERE `Email` LIKE '$userName'";// $sql es una variable que guarda los userName de la tabla todo del otro lado del igual es el codigo que se usa para accesar al $userName
 
-    $result = $con -> query($sql);// Trae la tabla de la base de datos
+    $result = $con -> query($sql);// $result es una variabel creada, query es una sentencia o busqueda que lee codigo sql de la base de datos, la variable $con es la ruta que lleva a la base de datos guardada en db.php . Todo este proceso se guarda en una tabla un "objeto" en la variable $result
+
     // La consulta (query guardada en la variable sql) la mandamos a la conexion
 
 
