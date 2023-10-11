@@ -1,5 +1,11 @@
 <?php 
 
+
+session_start(); 
+if (isset($_SESSION["logueado"])) {
+    header("location:profile.php");
+}
+
 if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del if, isset detecta si la variable _POST esta vacia o no, si esta vacia da false y no ejecuta el codigo dentro del if, pero si la variable si tiene informacion entonces el isset maraca true y ejecuta el codigo sin el isset no sirve el codigo de abajo
     $userName = $_POST["user"];
     $userPassword = $_POST["contraseña"];
