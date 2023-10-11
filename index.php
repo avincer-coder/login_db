@@ -1,10 +1,10 @@
 <?php 
 
-if (isset($_POST["user"])) {
+if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del if, isset detecta si la variable _POST esta vacia o no, si esta vacia da false y no ejecuta el codigo dentro del if, pero si la variable si tiene informacion entonces el isset maraca true y ejecuta el codigo sin el isset no sirve el codigo de abajo
     $userName = $_POST["user"];
     $userPassword = $_POST["contraseña"];
     require_once "db.php";
-    $sql = "SELECT * FROM `usuarios` WHERE `Email` LIKE '$userName'";
+    $sql = "SELECT * FROM `usuarios` WHERE `Email` LIKE '$userName'";// $sql es una variable que guarda los userName de la tabla todo del otro lado del igual es el codigo que se usa para accesar al $userName
 
     $result = $con -> query($sql);// Trae la tabla de la base de datos
     // La consulta (query guardada en la variable sql) la mandamos a la conexion
@@ -15,8 +15,16 @@ if (isset($_POST["user"])) {
         echo "NO EXSISTE NINGUN CORREO";
 
     }else{
-        $row = $result->fetch_assoc(); //->fetch_assoc() convierte la tabla que viene empaquetada en un objeto en la variable $result, a una array 
+        $row = $result->fetch_assoc(); //->fetch_assoc() convierte la tabla que viene empaquetada en un objeto en la variable $result, a una array y la guarda en la variable $row
+
+        // $row["Phone"]
         if ($userPassword == $row["Contraseña"]) { // Si la contraseña es igual a alguna que exsiste entonces redirecciona a otra pagina
+
+            session_start();
+            $_SESSION["logueado"] = $row["Phone"];
+
+
+
             header("location:profile.php");
 
         }else {
