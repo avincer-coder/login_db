@@ -3,7 +3,7 @@
 // INSERT INTO `usuarios`(`Email`, `Contraseña`, `Photo`, `Name`, `Biografia`, `Phone`) VALUES ('Mauricio@mauricio','098765','mauricio.jpg','Mauricio','Lorem12','1234567890');
 
 session_start(); 
-if (isset($_SESSION["logueado"])) {
+if (isset($_SESSION["phone"])) {
     header("location:profile.php");
 }
 
@@ -26,16 +26,21 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
         $row = $result->fetch_assoc(); //->fetch_assoc() convierte la tabla que viene empaquetada en un objeto en la variable $result, a una array y la guarda en la variable $row
 
         // $row["Phone"]
-        echo($userPassword);
-        $hash_password = hash("sha256", $userPassword);
+        // echo($userPassword);
+        // $hash_password = hash("sha256", $userPassword);
         
-        echo($row["Contraseña"]);
-        echo("<br>" . $hash_password);
+        // echo($row["Contraseña"]);
+        // echo("<br>" . $hash_password);
         
-        if ($hash_password == $row["Contraseña"]) { // Si la contraseña es igual a alguna que exsiste entonces redirecciona a otra pagina
+        if ($userPassword == $row["Contraseña"]) { // Si la contraseña es igual a alguna que exsiste entonces redirecciona a otra pagina
 
             session_start();
-            $_SESSION["logueado"] = $row["Phone"];
+            $_SESSION["phone"] = $row["Phone"];
+            $_SESSION["correo"] = $row["Email"];
+            $_SESSION["nombre"] = $row["Name"];
+            $_SESSION["imagen"] = $row["Photo"];
+            $_SESSION["contraseña"] = $row["Contraseña"];
+            $_SESSION["biografia"] = $row["Biografia"];
 
 
 
