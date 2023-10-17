@@ -5,8 +5,12 @@
 //     header("location:login.php");
 // }
 // $userPassword = $_POST["contraseña"];
-
 session_start();
+if (!isset($_SESSION["correo"])) {
+    header("location:index.php");
+}
+
+
 $log = $_SESSION["phone"];
 $correo = $_SESSION["correo"];
 $nombre = $_SESSION["nombre"];
@@ -15,11 +19,7 @@ echo "TEXTO DE PRUEBA" . $log;
 echo "TEXTO DE PRUEBA NUMERO DOS" . $correo;
 
 
-if (isset($_SESSION["phone"])) {
-    echo $log;
-}else{
-    header("location:index.php");
-}
+
 
 ?>
 

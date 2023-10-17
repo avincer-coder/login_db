@@ -81,7 +81,7 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
 </head>
 <body>
     <section class="card">
-        <img class="img_dev" src="devchallenges.svg" alt="devchallenges logo">
+        <img class="img_dev" src="assets/devchallenges.svg" alt="devchallenges logo">
         <h1>Login</h1>
         <form action="" method="post">
             <div class="box_login">
@@ -97,10 +97,10 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
         <div class="box_bottom">
             <p class="bottom_text">or continue with these social profile</p>
             <div class="box_social">
-                <img class="social_icons icons_hover" src="Google.svg" alt="google logo">
-                <img class="social_icons icons_hover" src="Facebook.svg" alt="facebook logo">
-                <img class="social_icons icons_hover" src="Twitter.svg" alt="twitter logo">
-                <img class="icons_hover" src="Gihub.svg" alt="github logo">
+                <img class="social_icons icons_hover" src="assets/Google.svg" alt="google logo">
+                <img class="social_icons icons_hover" src="assets/Facebook.svg" alt="facebook logo">
+                <img class="social_icons icons_hover" src="assets/Twitter.svg" alt="twitter logo">
+                <img class="icons_hover" src="assets/Gihub.svg" alt="github logo">
             </div>
             <p class="bottom_text">Don’t have an account yet? <a class="a_regiser" href="index.php">Register</a></p>
         </div>

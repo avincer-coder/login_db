@@ -1,30 +1,41 @@
 <?php 
+session_start(); 
+if (isset($_SESSION["correo"])) {
+   
+}else{
+    header("location:index.php");
+}
+
 
 if (isset($_POST["correo"])) {
 
-    session_start();
     $correo_session = $_SESSION["correo"];
 
     require_once "db.php";
-
+    // Creacion de variables locales
     $correo = $_POST["correo"];
     $contraseña = $_POST["contraseña"];
     $nombre_imagen = $_FILES["imagen"]["name"];
     $tem_ruta_img = $_FILES["imagen"]["tmp_name"];
-
-
     $biografia = $_POST["biografia"];
     $nombre = $_POST["nombre"];
     $telefono = $_POST["telefono"];
     $nombre_img_nuevo = $correo . ".jpg";
-
     $carpeta_destino = "img/";
     $ruta_guardar = $carpeta_destino . $nombre_img_nuevo; 
-    move_uploaded_file($tem_ruta_img, $ruta_guardar);
 
 
+    // Funcion para subir y guardar imagen 
+    if ( move_uploaded_file($tem_ruta_img, $ruta_guardar)) {
+        echo("La imagen se a cargado correctamente.");
+    }else{
+        echo("ERROR AL SUBIR IMAGEN");
+    }
 
-    $actualizar = "UPDATE `usuarios` SET `Email`='$correo',`Contraseña`='$contraseña',`Photo`='$nombre_img_nuevo',`Name`='$nombre',`Biografia`='$biografia',`Phone`='$telefono' WHERE `Email`='$correo_session';";
+    $contraseña_hash = password_hash($contraseña, PASSWORD_DEFAULT); //hashear contraseña
+
+
+    $actualizar = "UPDATE `usuarios` SET `Email`='$correo',`Contraseña`='$contraseña_hash',`Photo`='$nombre_img_nuevo',`Name`='$nombre',`Biografia`='$biografia',`Phone`='$telefono' WHERE `Email`='$correo_session';"; // sentencia sql o query 
 
     $result = $con -> query($actualizar);
 
