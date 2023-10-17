@@ -1,6 +1,6 @@
 
 
- Crear dos usuarios ya hechos
+
 
 
 
@@ -12,9 +12,4 @@
     En editar evitar el editar el correo por uno que ya exsistee y manjer este error
 
 Dark mode en js
-Flujo del programa
-Acción: Registrarse -> Vista: Información Personal (Personal Info)
 
-En tu repositorio en GitHub debe estar tu base de datos exportada y esta debe tener los datos de 2 cuentas. Recuerda que sí o sí debe tener estos datos.
-
-crear codigo sql para crear la base de datos desde cualquier lugar

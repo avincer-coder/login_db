@@ -26,6 +26,7 @@ echo "TEXTO DE PRUEBA NUMERO DOS" . $correo;
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -34,15 +35,23 @@ echo "TEXTO DE PRUEBA NUMERO DOS" . $correo;
 <body>
     <div class="top">
         <img src="devchallenges.svg" alt="dev logo">
-        <div class="box_modal">
-            <img src="<?php echo($imagen) ?>" alt="foto">
-            <p class="text_perfil"><?php echo($nombre)?></p>
-            <button>v</button>
+        <div class="box_perfil">
+            <div class="box_perfil_top">
+                <img src="<?php echo($imagen) ?>" alt="foto">
+                <p class="text_perfil"><?php echo($nombre)?></p>
+            </div>
+            <div class="box_perfil_bottom">
+                <p>My Profile</p>
+                <p>Gruop Chat</p>
+                <a href="cerrar_sesion.php">Log out</a>
+            </div>
         </div>
     </div>
     <h1>Personal info</h1>
     <p>Basic info, like your name and photo</p>
     <section>
+
+    
         <div>
             <h2>Profile</h2>
 
@@ -53,7 +62,8 @@ echo "TEXTO DE PRUEBA NUMERO DOS" . $correo;
         <P>Nombre <?php echo($nombre)?></P>
         <P>Imagen <?php echo($imagen)?></P>
         <img src="<?php echo("img/" . $imagen) ?>" alt="imagen de perfil">
-        <a href="cerrar_sesion.php">Cerrar Sesion</a>
+        
     </section>
+    <script src="profile.js" ></script>
 </body>
 </html>
