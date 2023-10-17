@@ -29,14 +29,31 @@ if (isset($_SESSION["phone"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <link rel="stylesheet" href="profile.css">
+</head> 
 <body>
-    <a href="editar_perfil.php">Editar</a>
-    <P>Telephono <?php echo($log)?></P>
-    <P>Correo <?php echo($correo)?></P>
-    <P>Nombre <?php echo($nombre)?></P>
-    <P>Imagen <?php echo($imagen)?></P>
-    <img src="<?php echo($imagen) ?>" alt="imagen de perfil">
-    <a href="cerrar_sesion.php">Cerrar Sesion</a>
+    <div class="top">
+        <img src="devchallenges.svg" alt="dev logo">
+        <div class="box_modal">
+            <img src="<?php echo($imagen) ?>" alt="foto">
+            <p class="text_perfil"><?php echo($nombre)?></p>
+            <button>v</button>
+        </div>
+    </div>
+    <h1>Personal info</h1>
+    <p>Basic info, like your name and photo</p>
+    <section>
+        <div>
+            <h2>Profile</h2>
+
+        </div>
+        <a href="editar_perfil.php">Editar</a>
+        <P>Telephono <?php echo($log)?></P>
+        <P>Correo <?php echo($correo)?></P>
+        <P>Nombre <?php echo($nombre)?></P>
+        <P>Imagen <?php echo($imagen)?></P>
+        <img src="<?php echo("img/" . $imagen) ?>" alt="imagen de perfil">
+        <a href="cerrar_sesion.php">Cerrar Sesion</a>
+    </section>
 </body>
 </html>

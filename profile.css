@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    border: 3px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 30px;
+}
+
+section{
+    border: 3px solid violet;
+    width: 846px;
+    height: 581px;
+}
+
+.top{
+    border: 2px solid blue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box_modal{
+    border: 3px solid greenyellow;
+    display: flex;
+}
+
+.text_perfil{
+    margin: 0px 20px 0px 10px;
+}

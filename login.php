@@ -26,14 +26,8 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
         $row = $result->fetch_assoc(); //->fetch_assoc() convierte la tabla que viene empaquetada en un objeto en la variable $result, a una array y la guarda en la variable $row
 
         // $row["Phone"]
-        // echo($userPassword);
         // $hash_password = hash("sha256", $userPassword);
-        
-        // echo($row["Contraseña"]);
-        // echo("<br>" . $hash_password);
-        
-        if ($userPassword == $row["Contraseña"]) { // Si la contraseña es igual a alguna que exsiste entonces redirecciona a otra pagina
-
+        if (password_verify($userPassword, $row["Contraseña"])) {
             session_start();
             $_SESSION["phone"] = $row["Phone"];
             $_SESSION["correo"] = $row["Email"];
@@ -42,13 +36,31 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
             $_SESSION["contraseña"] = $row["Contraseña"];
             $_SESSION["biografia"] = $row["Biografia"];
 
-
-
             header("location:profile.php");
-
-        }else {
+        }else{
             echo "TU CONTRASEÑA ESTA INCORRECTA";
         }
+
+
+
+
+        // if ($hash_password == $row["Contraseña"]) { // Si la contraseña es igual a alguna que exsiste entonces redirecciona a otra pagina
+
+        //     session_start();
+        //     $_SESSION["phone"] = $row["Phone"];
+        //     $_SESSION["correo"] = $row["Email"];
+        //     $_SESSION["nombre"] = $row["Name"];
+        //     $_SESSION["imagen"] = $row["Photo"];
+        //     $_SESSION["contraseña"] = $row["Contraseña"];
+        //     $_SESSION["biografia"] = $row["Biografia"];
+
+
+
+        //     header("location:profile.php");
+
+        // }else {
+        //     echo "TU CONTRASEÑA ESTA INCORRECTA";
+        // }
     }
 }
 
@@ -60,14 +72,39 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3a6e8db9a7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="login.css">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">   
 </head>
 <body>
-    <form action="" method="post">
-        <label for="usuario">Usuario</label>
-        <input id="usuario" type="text" name="user">
-        <input type="password" name="contraseña">
-        <input type="submit">
-    </form>
+    <section class="card">
+        <img class="img_dev" src="devchallenges.svg" alt="devchallenges logo">
+        <h1>Login</h1>
+        <form action="" method="post">
+            <div class="box_login">
+                <labe class="login_email" for="text"><i class="fa-solid fa-envelope icon" ></i></label>
+                <input id="text" type="text" name="user" placeholder="Email">
+            </div>
+            <div class="box_login">
+                <label class="login_lock" for="password"><i class="fa-solid fa-lock icon"></i></label>
+                <input type="password" id="password" name="contraseña" placeholder="Password">
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        <div class="box_bottom">
+            <p class="bottom_text">or continue with these social profile</p>
+            <div class="box_social">
+                <img class="social_icons icons_hover" src="Google.svg" alt="google logo">
+                <img class="social_icons icons_hover" src="Facebook.svg" alt="facebook logo">
+                <img class="social_icons icons_hover" src="Twitter.svg" alt="twitter logo">
+                <img class="icons_hover" src="Gihub.svg" alt="github logo">
+            </div>
+            <p class="bottom_text">Don’t have an account yet? <a class="a_regiser" href="index.php">Register</a></p>
+        </div>
+        <p>PRUEBA</p>
+    </section>
 </body>
 </html>

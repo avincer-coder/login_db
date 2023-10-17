@@ -9,19 +9,29 @@ if (isset($_POST["correo"])) {
 
     $correo = $_POST["correo"];
     $contraseña = $_POST["contraseña"];
-    $imagen = $_POST["imagen"];
+    $nombre_imagen = $_FILES["imagen"]["name"];
+    $tem_ruta_img = $_FILES["imagen"]["tmp_name"];
+
+
     $biografia = $_POST["biografia"];
     $nombre = $_POST["nombre"];
     $telefono = $_POST["telefono"];
+    $nombre_img_nuevo = $correo . ".jpg";
 
-    $actualizar = "UPDATE `usuarios` SET `Email`='$correo',`Contraseña`='$contraseña',`Photo`='$imagen',`Name`='$nombre',`Biografia`='$biografia',`Phone`='$telefono' WHERE `Email`='$correo_session';";
+    $carpeta_destino = "img/";
+    $ruta_guardar = $carpeta_destino . $nombre_img_nuevo; 
+    move_uploaded_file($tem_ruta_img, $ruta_guardar);
+
+
+
+    $actualizar = "UPDATE `usuarios` SET `Email`='$correo',`Contraseña`='$contraseña',`Photo`='$nombre_img_nuevo',`Name`='$nombre',`Biografia`='$biografia',`Phone`='$telefono' WHERE `Email`='$correo_session';";
 
     $result = $con -> query($actualizar);
 
     $_SESSION["phone"] = $telefono;
     $_SESSION["correo"] = $correo;
     $_SESSION["nombre"] = $nombre;
-    $_SESSION["imagen"] = $imagen;
+    $_SESSION["imagen"] = $nombre_img_nuevo;
     $_SESSION["contraseña"] = $contraseña;
     $_SESSION["biografia"] = $biografia;
 
@@ -63,13 +73,13 @@ if (isset($_POST["correo"])) {
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <label for="correo">Correo</label>
         <input id="correo" type="text" name="correo">
         <label for="contraseña">Contraseña</label>
         <input id="contraseña" type="password" name="contraseña">
         <label for="imagen">Imagen</label>
-        <input id="imagen" type="password" name="imagen">
+        <input id="imagen" type="file" name="imagen">
         <label for="biografia">biografia</label>
         <input id="biografia" type="password" name="biografia">
         <label for="telefono">telefono</label>
