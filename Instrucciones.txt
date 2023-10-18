@@ -9,7 +9,7 @@
     9.1 Evitar que se cree un perfile con una contraseña vacia o correo vacio
     9.2 Mandar un mensaje que diga "Falta contraseña/correo"
     9.3 Mandar mensaje de que el correo ya exsiste o esta en uso si se crea un perfile con el mismo correo
-    En editar evitar el editar el correo por uno que ya exsistee y manjer este error
+
 
 Dark mode en js
 

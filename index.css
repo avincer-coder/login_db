@@ -4,47 +4,56 @@
     padding: 0;
 }
 
+
 body{
-    border: 3px solid red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    /* height: 100vh; */
+    background-color: var(--primary-color);
+    color: var(--secundary-color);
 }
 
 input[type="password"]  {
-    border: 1px solid blue;
+    border: 0px;
+    border-radius: 10px;
     outline: none;
-    box-shadow: none;
-    margin: 0px 0px 0px 5px; 
+    box-shadow: none; 
     padding: 0px;
     font-family: 'Noto Sans', sans-serif;
-/* ERROR */
+    width: 90%;
+    height: 90%;
+    background-color: var(--primary-color);
+    color: var(--secundary-color);
+    font-size: 1em;
   }
 
 input[type="text"]{
-    border: 1px solid blue;
+    border: 0px;
+    border-radius: 10px;
     outline: none;
     box-shadow: none;
     margin: 0px;
     padding: 0px;
     font-family: 'Noto Sans', sans-serif;
-    /* height: 100%; */
-    /* ERROR */
+    width: 90%;
+    height: 90%;
+    background-color: var(--primary-color);
+    color: var(--secundary-color);
+    font-size: 1em;
   }
 
 input[type="submit"]{
     all: initial;
-    color: white;
-    background-color: #2F80ED;
+    color: var(--primary-color);
+    background-color: var(--third-color);
     border-radius: 8px;
     width: 100%;
-    height: 38px;
+    height: 2.2em;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0px 30px 0px;
+    margin: 1.2em 0em 2em 0em;
     font-family: 'Noto Sans', sans-serif;
+    color:white;
+    font-size: 1em;
   }
 
 input[type="submit"]:hover{
@@ -52,32 +61,29 @@ input[type="submit"]:hover{
 }
 
 .box_login{
-    border: 1px solid #BDBDBD;
+    border: 1px solid var(--secundary-color);
     border-radius: 8px;
-    height: 48px;
+    height: 3em;
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 2em;
+
 }
 
 .card{
-    border: 1px solid #BDBDBD;
+    border: 1px solid var(--secundary-color);
     border-radius: 24px;
-    width: 474px;
-    height: 634px;
-    padding: 50px 50px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
+    width: 30em; /* Cada unidad em vale 16px  */
+    height: 40em;
+    padding: 3em 3em;
 }
 
 .icon{
-    font-size: 24px;
-    line-height: 24px;
-    border: 1px solid red;
+    font-size: 1.5em;
+    line-height: 1.5em;
     margin: 0px;
-    padding: 0px 10px;
-    color: #828282;
+    padding: 0px 0.5em;
+    color: var(--secundary-color);
 }
 
 /* .icon:hover{
@@ -85,7 +91,6 @@ input[type="submit"]:hover{
 } */
 
 .box_bottom{
-    border: 1px solid violet;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,31 +98,34 @@ input[type="submit"]:hover{
 }
 
 .img_dev{
-    height: 18px;
-    width: 130px;
+    color: var(--primary-color);
+    height: 1em;
+    width: 8em;
 }
 
 h1{
-    margin: 20px 0px;
+    margin: 1.1em 0px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1em;
 }
 
 .box_social{
-    margin: 15px 0px 25px 0px;
-    border: 1px solid red;
+    margin: 1em 0px 1.5em 0px;
+}
 
+.box_social img{
+    width: 3em;
 }
 
 .bottom_text{
-    color: #828282;
+    color: var(--secundary-color);
     font-family: 'Noto Sans', sans-serif;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .social_icons{
-    margin-right: 15px;
+    margin-right: 1em;
 }
 
 .icons_hover:hover{
@@ -126,14 +134,27 @@ h1{
 
 .a_regiser{
     text-decoration: none;
-    color: #2D9CDB;
+    color: var(--third-color);
 }
 
 .text_invitacion{
     font-family: 'Noto Sans', sans-serif;
-    font-size: 16px;
-    color: #333333;
-    margin-bottom: 30px;
-    border: 1px solid red;
-    width: 350px;
+    font-size: 1em;
+    color: var(--secundary-color);
+    margin-bottom: 2em;
+    width: 21.9em;
 }
+
+main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 5.5px;
+    }
+  }  

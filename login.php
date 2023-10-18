@@ -20,7 +20,7 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
 
     if (mysqli_num_rows($result) == 0) { //mysqli_num_rows Cuenta cuantas columnas tiene la tabla si no exsisten numeros entonces se cumple y imprime lo de abajo
         // header("location:index.php");
-        echo "NO EXSISTE NINGUN CORREO";
+        echo "<script>alert('¡Hubo un problema con tu correo revisalo!');</script>";
 
     }else{
         $row = $result->fetch_assoc(); //->fetch_assoc() convierte la tabla que viene empaquetada en un objeto en la variable $result, a una array y la guarda en la variable $row
@@ -35,32 +35,10 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
             $_SESSION["imagen"] = $row["Photo"];
             $_SESSION["contraseña"] = $row["Contraseña"];
             $_SESSION["biografia"] = $row["Biografia"];
-
             header("location:profile.php");
         }else{
-            echo "TU CONTRASEÑA ESTA INCORRECTA";
+            echo "<script>alert('¡Tu contraseña es incorrecta!');</script>"; 
         }
-
-
-
-
-        // if ($hash_password == $row["Contraseña"]) { // Si la contraseña es igual a alguna que exsiste entonces redirecciona a otra pagina
-
-        //     session_start();
-        //     $_SESSION["phone"] = $row["Phone"];
-        //     $_SESSION["correo"] = $row["Email"];
-        //     $_SESSION["nombre"] = $row["Name"];
-        //     $_SESSION["imagen"] = $row["Photo"];
-        //     $_SESSION["contraseña"] = $row["Contraseña"];
-        //     $_SESSION["biografia"] = $row["Biografia"];
-
-
-
-        //     header("location:profile.php");
-
-        // }else {
-        //     echo "TU CONTRASEÑA ESTA INCORRECTA";
-        // }
     }
 }
 
@@ -85,7 +63,7 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
         <h1>Login</h1>
         <form action="" method="post">
             <div class="box_login">
-                <labe class="login_email" for="text"><i class="fa-solid fa-envelope icon" ></i></label>
+                <label class="login_email" for="text"><i class="fa-solid fa-envelope icon" ></i></label>
                 <input id="text" type="text" name="user" placeholder="Email">
             </div>
             <div class="box_login">
@@ -104,7 +82,6 @@ if (isset($_POST["user"])) { // isset sirve para ejecutar el codigo dentro del i
             </div>
             <p class="bottom_text">Don’t have an account yet? <a class="a_regiser" href="index.php">Register</a></p>
         </div>
-        <p>PRUEBA</p>
     </section>
 </body>
 </html>
