@@ -90,7 +90,7 @@ $biografia = $_SESSION["biografia"];
         <div class="box_bot">
             <p class="edite_title">PASSWORD</p>
             <!-- <p><?php echo($contraseña)?></p> -->
-            <p>contraseña no encriptada</p>
+            <p>************</p>
         </div>
        
         

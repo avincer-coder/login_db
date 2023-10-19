@@ -1,5 +1,12 @@
 <?php 
 session_start(); 
+$phone = $_SESSION["phone"];
+$correo = $_SESSION["correo"];
+$nombre = $_SESSION["nombre"];
+$imagen = $_SESSION["imagen"];
+$biografia = $_SESSION["biografia"];
+
+
 if (isset($_SESSION["correo"])) {
    
 }else{
@@ -57,7 +64,7 @@ if (!empty($_POST["correo"]) && !empty($_POST["contraseña"])) {
         }
     }
 }else{
-    echo "<script>alert('¡Considera esto, los campos correo y contraseña no se pueden ir vacios!');</script>"; 
+    echo "<script>alert('Keep this in mind the email and password spaces can not be send empty!');</script>"; 
 }
 
 ?>
@@ -75,15 +82,36 @@ if (!empty($_POST["correo"]) && !empty($_POST["contraseña"])) {
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">  
 </head>
 <body>
-        <div class="top">
-            <img src="assets/devchallenges.svg" alt="dev logo">
-            <div><p>profile edite</p></div>
-            <!-- <div class="box_perfil_top">
-                <img class="small_img_profil" src="<?php echo("img/" . $imagen) ?>" alt="imagen de perfil">
+    <div class="top">
+        <img src="assets/devchallenges.svg" alt="dev logo">
+        <div class="box_perfil">
+            <div class="box_perfil_top">
+                <img class="small_img_profil" src="<?php
+                 echo("img/" . $imagen) ?>" alt="imagen de perfil">
                 <p class="text_perfil"><?php echo($nombre)?></p>
                 <i class="fa-solid fa-sort-down"></i>
-            </div> -->
+            </div>
+            <div class="box_perfil_bottom">
+                <div class="open_modal">
+                    <i class="fa-solid fa-circle-user icon_margin"></i>
+                    <p>My Profile</p>
+                </div>
+                <div class="open_modal">
+                    <i class="fa-solid fa-users icon_margin"></i>
+                    <p>Gruop Chat</p>
+                </div>
+                <div class="open_modal logout_box">
+                    <i class="fa-solid fa-arrow-right-to-bracket icon_margin" style="color: #f50000;"></i>
+                    <a class="log_out" href="cerrar_sesion.php">Log out</a>
+                </div>
+                
+            </div>
         </div>
+    </div>
+
+
+
+
     
     <section class="full_container">
         <a class="back" href="profile.php"><    Back</a>
@@ -92,8 +120,15 @@ if (!empty($_POST["correo"]) && !empty($_POST["contraseña"])) {
             <p class="title_description">Changes will be reflected to every services</p>
             <div class="form_container">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <label class="img_label" for="imagen">CHANGE PHOTO</label>
-                    <input id="imagen" type="file" name="imagen">
+
+                    <label class="img_label" for="imagen"> 
+                        <img class="small_img_profil2" src="<?php echo("img/" . $imagen) ?>" alt="imagen de perfil">
+                        <i class="fa-solid fa-camera" style="color: #ffff;"></i>
+                        <p>CHOOSE PHOTO</p>
+                    </label>
+
+                    <input class="input_file" id="imagen" type="file" name="imagen">
+                    
                     <label for="nombre">Name</label>
                     <input placeholder="Enter your name..." id="nombre" type="text" name="nombre">
                     <label for="biografia">Bio</label>
@@ -109,5 +144,6 @@ if (!empty($_POST["correo"]) && !empty($_POST["contraseña"])) {
             </div>
         </article>
     </section>
+    <script src="profile.js" ></script>
 </body>
 </html>

@@ -16,7 +16,7 @@ body{
 
 section{
     width: 846px;
-    height: 500px;
+    height: 560px;
 }
 
 .top{
@@ -32,10 +32,12 @@ section{
 .box_perfil_top{
     display: flex;
     margin-bottom: 0.7em;
+    box-shadow:  2px 2px 4px #888888;
 }
 
 .box_perfil_top:hover{
     cursor: pointer;
+    box-shadow: 5px 5px 10px #888888;
 }
 
 .text_perfil{
@@ -149,10 +151,12 @@ section{
     align-items: center;
     justify-content: center;
     border: 1px solid #888888;
+    color: #828282;
 }
 
 .edit_btn:hover{
     box-shadow: 5px 5px 10px #888888;
+    color: black;
 }
 
 .title_description{
@@ -169,4 +173,9 @@ h1, h2{
 
 .subtitle_description{
     font-size: 13px;
+}
+
+.log_out{
+    text-decoration: none;
+    color: red;
 }

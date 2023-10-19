@@ -43,6 +43,10 @@ body{
     font-size: 18px;
 }
 
+.back:hover{
+    color: blue;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -77,6 +81,16 @@ input[type="file"]{
 .img_label{
     color: #8c8a8a;
     font-size: 12px;
+    display: flex;
+    margin-bottom: 2em;
+    align-items: center;
+    box-shadow: 2px 2px 4px #888888;
+    border-radius: 2em;
+}
+
+.img_label:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #888888;
 }
 
 input[type="submit"]:hover{
@@ -100,4 +114,84 @@ h1{
 label{
     font-size: 0.8em;
     font-weight: 500;
+}
+
+.open_modal{
+    display: flex;
+    width: 8em;
+    height: 2em;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 0.5em;
+    padding-left: 0.4em;
+}
+
+.open_modal:hover{
+    background-color: #edecec;
+    cursor: pointer;
+    border-radius: 0.5em;
+    border: 1px solid white;
+}
+
+.icon_margin{
+    margin-right: 0.6em;
+}
+
+.logout_box{
+    border-top: 1px solid gray;
+    border-radius: 0px;
+}
+
+.text_perfil{
+    font-weight: 900;
+    margin: 0px 20px 0px 10px;
+}
+
+.box_perfil_top {
+    display: flex;
+    margin-bottom: 0.7em;
+    box-shadow:  2px 2px 4px #888888;
+    border-radius: 0.2em;
+}
+
+.small_img_profil2{
+    width: 6em;
+    height: 5em;
+    border-radius: 0.5em;
+}
+
+.input_file{
+    display: none;
+}
+
+.fa-camera{
+    position: relative;
+    left: -47px;
+    top: -1px;
+    font-size: 2em;
+}
+
+.small_img_profil{
+    width: 2em;
+    border-radius: 0.2em;
+}
+
+
+.box_perfil_bottom {
+    display: none;
+    box-shadow: 5px 5px 10px #888888;
+    border-radius: 1em;
+    padding: 1em;
+    height: 8em;
+    width: 10em;
+}
+
+.box_perfil_top:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #888888;
+}
+
+.log_out{
+    text-decoration: none;
+    color: red;
 }
